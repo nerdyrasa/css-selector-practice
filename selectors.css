@@ -2,34 +2,93 @@
    Practice CSS Selectors 
 ========================================================= */
 
-/* Change the color of all list items inside an unordered list */
+/* 1. Change the color of all list items inside an unordered list */
 
+/* Use a descendant selector. The following rule will select all li elements within a  ul element
+even if it's 3 or 4 levels deep. This is in constrast to
 
+ul > li which will only select the direct child of a ul
 
-/* Remove the text decoration from navigation links, and change their color when hovered */
+See https://css-tricks.com/child-and-sibling-selectors/ for good discussion.
 
+*/
 
+ul li { color: orange; }
+
+/* 2. Remove the text decoration from navigation links, and change their color when hovered */
+
+/*
+From https://css-tricks.com/almanac/selectors/v/visited/
+
+Link Pseudo-Classes in Order
+It's also useful to know that most of the link pseudo-classes should be declared in a specific order. The order is: Link, Visited, Hover, Active. If you're including :focus styling for your link, it's common to add it between "hover" and "active".
+
+*/
+nav a:link {
+    text-decoration: none;
+    color: orange;
+}
+
+nav a:visited {
+    color: chartreuse;
+}
+
+nav a:hover {
+    color: red;
+}
+
+nav a:focus {
+    color: aqua;
+}
+
+nav a:active {
+    color: blue;
+}
 
 /* Create hover and visited styles for all links inside 'main' */
+
+/* Link Pseudo-Classes (In Order)
+   link, visited, hover, active
+   l, v, h, a
+   love, hate */
+main a:link { color: olivedrab; }
+main a:hover { color: tomato;
+    text-decoration: none; }
+main a:visited { color: skyblue; }
+
 
 
 
 /* Change the background color of the submit button when active */
-
+input[type="submit"]:active {
+    background-color: yellow;
+}
 
 
 /* Give the text field a blue border upon focus */
-
-
+input[type="submit"]:focus {
+    background-color: magenta;
+}
 
 /* Give the 'span' tag in the footer a meaningful class name and reduce its font size */
-
+.copyright {
+    font-size: 0.9em;
+}
 
 
 /* Give the 'img' tag in the header an ID and set its width to 190px */
-
+#header-img {
+    width: 190px;
+}
 
 
 /* Target all heading tags on the page and set their font family to 'Bree Serif', serif */
-
+h1,
+h2,
+h3,
+h4, 
+h5,
+h6 {
+    font-family: 'Bree Serif', serif;
+}
 
